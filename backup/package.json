@@ -1,0 +1,12 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "Portfolio Website",
+  "main": "index.html",
+  "scripts": {
+    "dev": "live-server ."
+  },
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}

@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khushi_Yadav // SYSTEM PROFILE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="progress" id="progress"></div>
+    <canvas id="starfield"></canvas>
+    <div class="bg-grid" id="bgGrid"></div>
+    <div class="bg-glow"></div>
+    <div class="spotlight" id="spotlight"></div>
+    <div class="scanlines"></div>
+    <div class="vignette"></div>
+
+    <div class="hud-float tl"><span class="flicker">LAT 28.4595&deg; N</span><br>LON 77.6931&deg; E</div>
+    <div class="hud-float tr">SIGNAL <span class="flicker">▮▮▮▮▯</span><br>UPLINK STABLE</div>
+    <div class="hud-float bl">REF// TR-2026</div>
+    <div class="hud-float br"><span class="flicker">ALL SYSTEMS NOMINAL</span></div>
+
+    <nav class="topnav">
+        <div class="id">Khushi K. Yadav<span style="color:var(--text-dim)">// v2.0</span></div>
+        <div class="stat">
+            <span>ROLE: <b>CSE STUDENT</b></span>
+            <span>STATUS: <b>OPEN TO WORK</b></span>
+            <span id="clock">00:00:00</span>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="boot" id="bootLog"></div>
+
+        <div class="id-frame" id="idFrame">
+            <div class="ring"></div>
+            <svg viewBox="0 0 120 120" width="120" height="120"
+                style="border-radius:50%; border:2px solid var(--cyan); box-shadow:0 0 30px rgba(77,243,255,0.35); background:linear-gradient(180deg,#0e1626,#0b121f);">
+                <defs>
+                    <linearGradient id="skinGrad" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0%" stop-color="#2a3a4d" />
+                        <stop offset="100%" stop-color="#1c2b3d" />
+                    </linearGradient>
+                    <linearGradient id="suitGrad" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0%" stop-color="#12202e" />
+                        <stop offset="100%" stop-color="#0b121f" />
+                    </linearGradient>
+                </defs>
+                <circle cx="60" cy="60" r="58" fill="url(#suitGrad)" />
+                <!-- shoulders / suit -->
+                <path d="M14 118 C14 88 34 76 60 76 C86 76 106 88 106 118 Z" fill="url(#suitGrad)" stroke="#213244"
+                    stroke-width="1" />
+                <path d="M46 82 L60 100 L74 82 L66 78 L60 84 L54 78 Z" fill="#4df3ff" opacity="0.85" />
+                <!-- neck -->
+                <rect x="50" y="62" width="20" height="18" rx="6" fill="url(#skinGrad)" />
+                <!-- head -->
+                <ellipse cx="60" cy="46" rx="22" ry="25" fill="url(#skinGrad)" stroke="#324a63" stroke-width="1" />
+                <!-- hair -->
+                <path d="M38 40 C36 20 46 10 60 10 C74 10 84 20 82 40 C79 30 71 24 60 24 C49 24 41 30 38 40 Z"
+                    fill="#0d1520" stroke="#1c2b3d" stroke-width="1" />
+                <!-- eyes -->
+                <ellipse cx="51" cy="47" rx="2.4" ry="2.8" fill="#4df3ff" />
+                <ellipse cx="69" cy="47" rx="2.4" ry="2.8" fill="#4df3ff" />
+                <!-- eyebrows -->
+                <rect x="46" y="41" width="10" height="1.6" rx="0.8" fill="#324a63" />
+                <rect x="64" y="41" width="10" height="1.6" rx="0.8" fill="#324a63" />
+                <!-- nose -->
+                <path d="M60 47 L58 56 L63 57" stroke="#324a63" stroke-width="1.2" fill="none" stroke-linecap="round" />
+                <!-- smile -->
+                <path d="M52 61 Q60 66 68 61" stroke="#4df3ff" stroke-width="1.4" fill="none" stroke-linecap="round"
+                    opacity="0.7" />
+                <!-- collar highlight -->
+                <circle cx="60" cy="60" r="58" fill="none" stroke="#4df3ff" stroke-width="0.6" opacity="0.25" />
+            </svg>
+        </div>
+
+        <h1 id="heroName">Khushi Kumari Yadav</h1>
+        <div class="role" id="heroRole">Web Developer <b>//</b>· Data Analyst · Power Bi Developer</div>
+        <p class="tagline" id="heroTag">
+            A passionate and driven CSE student exploring the vast world of technology
+            and innovation — with a strong foundation in data analytics, web development,
+            and problem-solving. I turn complex problems into elegant, practical solutions.
+        </p>
+        <div class="cta-row" id="heroCta">
+            <a class="btn" href="#projects">View My Work</a>
+            <a class="btn amber"
+                href="https://drive.google.com/file/d/1wveXuPyXmstMrVPMhoMOruNls6RAoio2/view?usp=sharing"
+                href="https://drive.google.com/file/d/1wveXuPyXmstMrVPMhoMOruNls6RAoio2/view?usp=sharing"
+                target="_blank" rel="noreferrer">Download CV</a>
+            <a class="btn ghost" href="#comms">Open Channel</a>
+        </div>
+
+        <div class="stat-row" id="heroStats">
+            <div class="stat-item">
+                <div class="num" data-count="12">0</div>
+                <div class="lbl">Github Repositories</div>
+            </div>
+            <div class="stat-item">
+                <div class="num" data-count="3">0</div>
+                <div class="lbl">Organizations Worked With</div>
+            </div>
+        </div>
+
+        <div class="scroll-cue"><span>SCROLL</span>
+            <div class="line"></div>
+        </div>
+    </header>
+
+    <div class="ticker">
+        <div class="track">
+            <span><b>AI</b> // MACHINE LEARNING</span>
+            <span><b>CLOUD</b> // INFRASTRUCTURE</span>
+            <span><b>DSA</b> // COMPETITIVE PROGRAMMING</span>
+            <span><b>FULL-STACK</b> // MERN & NEXT.JS</span>
+            <span><b>STATUS</b> // OPEN TO OPPORTUNITIES</span>
+            <span><b>AI</b> // MACHINE LEARNING</span>
+            <span><b>CLOUD</b> // INFRASTRUCTURE</span>
+            <span><b>DSA</b> // COMPETITIVE PROGRAMMING</span>
+            <span><b>FULL-STACK</b> // MERN & NEXT.JS</span>
+            <span><b>STATUS</b> // OPEN TO OPPORTUNITIES</span>
+        </div>
+    </div>
+
+    <section class="section" id="about">
+        <div class="section-head reveal">
+            <div class="radar">
+                <svg viewBox="0 0 64 64">
+                    <circle cx="32" cy="32" r="30" fill="none" stroke="var(--line)" stroke-width="1" />
+                    <circle cx="32" cy="32" r="20" fill="none" stroke="var(--line)" stroke-width="1" />
+                    <circle cx="32" cy="32" r="10" fill="none" stroke="var(--line)" stroke-width="1" />
+                    <g class="sweep">
+                        <path d="M32 32 L32 2 A30 30 0 0 1 58 18 Z" fill="var(--cyan)" opacity="0.18" />
+                        <line x1="32" y1="32" x2="32" y2="2" stroke="var(--cyan)" stroke-width="1.4" />
+                    </g>
+                    <circle cx="32" cy="32" r="2" fill="var(--cyan)" />
+                </svg>
+            </div>
+            <div class="txt">
+                <div class="eyebrow">01 // Operator Log</div>
+                <h2>About the Operator</h2>
+                <p>A quick readout on who's behind the console.</p>
+            </div>
+        </div>
+
+        <div class="about-grid">
+            <div class="about-copy panel reveal">
+                <span class="sheen"></span><span class="cbl"></span><span class="cbr"></span>
+                <p>I am a <b>passionate and driven Computer Science Engineering student</b>, eager to explore the vast
+                    world of technology and innovation. My academic journey is fueled by a profound interest in
+                    programming, problem-solving, and cutting-edge technologies like <b>AI, machine learning, and cloud
+                        computing</b>.</p>
+                <p>I've built a strong foundation in <b>data structures, algorithms, and full-stack web development</b>.
+                    I love turning complex problems into elegant, optimal solutions, and I'm continuously seeking
+                    opportunities to learn, build, and grow as a developer.</p>
+                <p style="margin-top:22px;"><a class="btn ghost"
+                        href="https://drive.google.com/file/d/1wveXuPyXmstMrVPMhoMOruNls6RAoio2/view?usp=sharing"
+                        target="_blank" rel="noreferrer" style="display:inline-block;">Download CV</a></p>
+            </div>
+
+            <div class="telemetry panel reveal">
+                <span class="sheen"></span><span class="cbl"></span><span class="cbr"></span>
+                <div class="eyebrow" style="margin-bottom:6px;">Core Readouts</div>
+
+                <div class="item" data-pct=".92">
+                    <div class="row"><span class="k">Problem Solving</span><span class="v">92%</span></div>
+                    <div class="bar"><i style="--pct:.92"></i></div>
+                </div>
+                <div class="item" data-pct=".8">
+                    <div class="row"><span class="k">AI / ML</span><span class="v">80%</span></div>
+                    <div class="bar"><i style="--pct:.8"></i></div>
+                </div>
+                <div class="item" data-pct=".85">
+                    <div class="row"><span class="k">Full-Stack Dev</span><span class="v">85%</span></div>
+                    <div class="bar"><i style="--pct:.85"></i></div>
+                </div>
+                <div class="item" data-pct=".78">
+                    <div class="row"><span class="k">Data Structures & Algorithms</span><span class="v">78%</span></div>
+                    <div class="bar"><i style="--pct:.78"></i></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="skills">
+        <div class="section-head reveal">
+            <div class="radar">
+                <svg viewBox="0 0 64 64">
+                    <circle cx="32" cy="32" r="30" fill="none" stroke="var(--line)" stroke-width="1" />
+                    <circle cx="32" cy="32" r="20" fill="none" stroke="var(--line)" stroke-width="1" />
+                    <circle cx="32" cy="32" r="10" fill="none" stroke="var(--line)" stroke-width="1" />
+                    <g class="sweep">
+                        <path d="M32 32 L32 2 A30 30 0 0 1 58 18 Z" fill="var(--violet)" opacity="0.18" />
+                        <line x1="32" y1="32" x2="32" y2="2" stroke="var(--violet)" stroke-width="1.4" />
+                    </g>
+                    <circle cx="32" cy="32" r="2" fill="var(--violet)" />
+                </svg>
+            </div>
+            <div class="txt">
+                <div class="eyebrow">02 // Loaded Modules</div>
+                <h2>Systems & Stack</h2>
+                <p>Languages, frameworks, and tools currently installed.</p>
+            </div>
+        </div>
+
+        <div class="sys-groups">
+            <div class="sys-card panel reveal">
+                <span class="sheen"></span><span class="cbl"></span><span class="cbr"></span>
+                <span class="tag">Languages</span>
+                <div class="sys-list">
+                    <span class="sys-chip">Java</span>
+                    <span class="sys-chip">C</span>
+                    <span class="sys-chip">C++</span>
+                    <span class="sys-chip">Python</span>
+                    <span class="sys-chip">PHP</span>
+                    <span class="sys-chip">JavaScript</span>
+                    <span class="sys-chip">HTML5</span>
+                    <span class="sys-chip">CSS3</span>
+                </div>
+            </div>
+
+            <div class="sys-card panel reveal">
+                <span class="sheen"></span><span class="cbl"></span><span class="cbr"></span>
+                <span class="tag">Frameworks</span>
+                <div class="sys-list">
+                    <span class="sys-chip">React</span>
+                    <span class="sys-chip">Next.js</span>
+                    <span class="sys-chip">Node.js</span>
+                    <span class="sys-chip">Express</span>
+                    <span class="sys-chip">Bootstrap</span>
+                    <span class="sys-chip">Tailwind</span>
+                </div>
+            </div>
+
+            <div class="sys-card panel reveal">
+                <span class="sheen"></span><span class="cbl"></span><span class="cbr"></span>
+                <span class="tag">Data Layer</span>
+                <div class="sys-list">
+                    <span class="sys-chip">MySQL</span>
+                    <span class="sys-chip">MongoDB</span>
+                    <span class="sys-chip">Supabase</span>
+                </div>
+            </div>
+
+            <div class="sys-card panel reveal">
+                <span class="sheen"></span><span class="cbl"></span><span class="cbr"></span>
+                <span class="tag">Core & Tools</span>
+                <div class="sys-list">
+                    <span class="sys-chip">Data Structures</span>
+                    <span class="sys-chip">Algorithms</span>
+                    <span class="sys-chip">Git / GitHub</span>
+                    <span class="sys-chip">Docker</span>
+                    <span class="sys-chip">Linux</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="experience">
+        <div class="section-head reveal">
+            <div class="radar">
+                <svg viewBox="0 0 64 64">
+                    <circle cx="32" cy="32" r="30" fill="none" stroke="var(--line)" stroke-width="1" />
+                    <circle cx="32" cy="32" r="20" fill="none" stroke="var(--line)" stroke-width="1" />
+                    <circle cx="32" cy="32" r="10" fill="none" stroke="var(--line)" stroke-width="1" />
+                    <g class="sweep">
+                        <path d="M32 32 L32 2 A30 30 0 0 1 58 18 Z" fill="var(--amber)" opacity="0.18" />
+                        <line x1="32" y1="32" x2="32" y2="2" stroke="var(--amber)" stroke-width="1.4" />
+                    </g>
+                    <circle cx="32" cy="32" r="2" fill="var(--amber)" />
+                </svg>
+            </div>
+            <div class="txt">
+                <div class="eyebrow">03 // Mission Log</div>
+                <h2>Experience</h2>
+                <p>Roles and missions completed to date.</p>
+            </div>
+        </div>
+
+        <div class="timeline panel reveal" style="border:none; background:none; padding:6px 0 0 0;">
+            <div class="t-item">
+                <div class="when">Jan 2026 &ndash; Feb 2026</div>
+                <h3>Power BI Intern</h3>
+                <div class="org">Hunar Intern</div>
+                <p>Created interactive Power BI dashboards, worked with SQL and Excel for data cleaning and analysis,
+                    and developed KPI-based visualizations.</p>
+            </div>
+            <div class="t-item">
+                <div class="when">Sep 2025 &ndash; Oct 2025</div>
+                <h3>Data Analyst Intern</h3>
+                <div class="org">Labmentix Private Limited</div>
+                <p>Analyzed datasets using SQL queries and joins, created KPI dashboards using Power BI, and worked on
+                    data analysis, visualization, and reporting.</p>
+            </div>
+            <div class="t-item">
+                <div class="when">2026</div>
+                <h3>Data Analyst Intern</h3>
+                <div class="org">Dhwaja Flare</div>
+                <p>Conducted market research and data collection, analyzed campaign and business data, and assisted
+                    with content development and data-driven decision making.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="projects">
+        <div class="section-head reveal">
+            <div class="radar">
+                <svg viewBox="0 0 64 64">
+                    <circle cx="32" cy="32" r="30" fill="none" stroke="var(--line)" stroke-width="1" />
+                    <circle cx="32" cy="32" r="20" fill="none" stroke="var(--line)" stroke-width="1" />
+                    <circle cx="32" cy="32" r="10" fill="none" stroke="var(--line)" stroke-width="1" />
+                    <g class="sweep">
+                        <path d="M32 32 L32 2 A30 30 0 0 1 58 18 Z" fill="var(--cyan)" opacity="0.18" />
+                        <line x1="32" y1="32" x2="32" y2="2" stroke="var(--cyan)" stroke-width="1.4" />
+                    </g>
+                    <circle cx="32" cy="32" r="2" fill="var(--cyan)" />
+                </svg>
+            </div>
+            <div class="txt">
+                <div class="eyebrow">04 // Deployed Modules</div>
+                <h2>Featured Projects</h2>
+                <p>Live builds and repositories currently running.</p>
+            </div>
+        </div>
+
+        <div class="proj-grid">
+            <div class="proj-card panel reveal">
+                <span class="sheen"></span><span class="cbl"></span><span class="cbr"></span>
+                <div class="pid">MOD // 01</div>
+                <h3>MockMaster AI</h3>
+                <p>An AI-powered mock interview platform designed to help users practice technical and HR interviews
+                    with interactive feedback and performance tracking.</p>
+                <div class="proj-chips"><span class="proj-chip">React.js</span><span class="proj-chip">AI</span><span
+                        class="proj-chip">Supabase</span></div>
+                <div class="proj-links"><a href="https://mock-master-ai-pi.vercel.app/" target="_blank"
+                        rel="noreferrer">Live Demo</a></div>
+            </div>
+
+            <div class="proj-card panel reveal">
+                <span class="sheen"></span><span class="cbl"></span><span class="cbr"></span>
+                <div class="pid">MOD // 02</div>
+                <h3>Smart Parking System</h3>
+                <p>A Computer Vision based smart parking system that detects free and occupied parking spaces in real
+                    time.</p>
+                <div class="proj-chips"><span class="proj-chip">Python</span><span class="proj-chip">OpenCV</span><span
+                        class="proj-chip">Computer Vision</span></div>
+                <div class="proj-links"><a href="https://github.com/Khushi-yadav8757/Smart-Parking-System" target="_blank"
+                        rel="noreferrer">Source</a></div>
+            </div>
+
+            <div class="proj-card panel reveal">
+                <span class="sheen"></span><span class="cbl"></span><span class="cbr"></span>
+                <div class="pid">MOD // 03</div>
+                <h3>TrendKart</h3>
+                <p>A modern fashion and lifestyle discovery website featuring curated products across different
+                    categories.</p>
+                <div class="proj-chips"><span class="proj-chip">HTML</span><span class="proj-chip">CSS</span></div>
+                <div class="proj-links"><a href="https://trendkart52.netlify.app/" target="_blank"
+                        rel="noreferrer">Live Website</a></div>
+            </div>
+
+            <div class="proj-card panel reveal">
+                <span class="sheen"></span><span class="cbl"></span><span class="cbr"></span>
+                <div class="pid">MOD // 04</div>
+                <h3>PhonePe Payment Insights Dashboard</h3>
+                <p>An interactive data analytics dashboard designed to analyze payment trends, transaction performance,
+                    user activity, and key business insights.</p>
+                <div class="proj-chips"><span class="proj-chip">Power BI</span><span class="proj-chip">Excel</span><span
+                        class="proj-chip">Data Analytics</span></div>
+                <div class="proj-links"><a href="https://github.com/Khushi-yadav8757/PhonePe-Dashboard-PowerBi-Project"
+                        target="_blank" rel="noreferrer">Source</a></div>
+            </div>
+        </div>
+
+        <div style="text-align:center; margin-top:36px;">
+            <a class="btn ghost" href="https://github.com/Khushi-yadav8757" target="_blank" rel="noreferrer">Explore All
+                Repositories</a>
+        </div>
+    </section>
+
+    <section class="section" id="certifications">
+        <div class="section-head reveal">
+            <div class="radar">
+                <svg viewBox="0 0 64 64">
+                    <circle cx="32" cy="32" r="30" fill="none" stroke="var(--line)" stroke-width="1" />
+                    <circle cx="32" cy="32" r="20" fill="none" stroke="var(--line)" stroke-width="1" />
+                    <circle cx="32" cy="32" r="10" fill="none" stroke="var(--line)" stroke-width="1" />
+                    <g class="sweep">
+                        <path d="M32 32 L32 2 A30 30 0 0 1 58 18 Z" fill="var(--violet)" opacity="0.18" />
+                        <line x1="32" y1="32" x2="32" y2="2" stroke="var(--violet)" stroke-width="1.4" />
+                    </g>
+                    <circle cx="32" cy="32" r="2" fill="var(--violet)" />
+                </svg>
+            </div>
+            <div class="txt">
+                <div class="eyebrow">05 // Commendations</div>
+                <h2>Certifications & Awards</h2>
+                <p>Recognitions earned across hackathons and technical fests.</p>
+            </div>
+        </div>
+
+        <div class="cert-grid">
+            <div class="cert-card panel reveal">
+                <span class="sheen"></span><span class="cbl"></span><span class="cbr"></span>
+                <div class="cert-icon"><i></i></div>
+                <div class="cert-body">
+                    <div class="when">Nov 2024</div>
+                    <h4>Robo Sumo &mdash; 1st Position (Zonal)</h4>
+                    <div class="org">Dr. A.P.J. Abdul Kalam Technical University</div>
+                    <p>Secured 1st position at the Inter-Technical University Fest, 2024&ndash;25 (Zonal Level).</p>
+                </div>
+            </div>
+
+            <div class="cert-card panel reveal">
+                <span class="sheen"></span><span class="cbl"></span><span class="cbr"></span>
+                <div class="cert-icon"><i></i></div>
+                <div class="cert-body">
+                    <div class="when">Dec 2024</div>
+                    <h4>Robo Sumo Challenge (State Level)</h4>
+                    <div class="org">Dr. A.P.J. Abdul Kalam Technical University</div>
+                    <p>Participated in the Robo Sumo Challenge at the State Level Technical Fest.</p>
+                </div>
+            </div>
+
+            <div class="cert-card panel reveal">
+                <span class="sheen"></span><span class="cbl"></span><span class="cbr"></span>
+                <div class="cert-icon"><i></i></div>
+                <div class="cert-body">
+                    <div class="when">2025</div>
+                    <h4>ASTRA 2025 Hackathon</h4>
+                    <div class="org">Delhi Technological University (DTU)</div>
+                    <p>Participated in the Innovation Submission Round 1.</p>
+                </div>
+            </div>
+
+            <div class="cert-card panel reveal">
+                <span class="sheen"></span><span class="cbl"></span><span class="cbr"></span>
+                <div class="cert-icon"><i></i></div>
+                <div class="cert-body">
+                    <div class="when">2024</div>
+                    <h4>VesHack &mdash; Hackathon of Vespera '24</h4>
+                    <div class="org">Guru Gobind Singh Indraprastha University</div>
+                    <p>Participated representing Team Elites Codex.</p>
+                </div>
+            </div>
+
+            <div class="cert-card panel reveal">
+                <span class="sheen"></span><span class="cbl"></span><span class="cbr"></span>
+                <div class="cert-icon"><i></i></div>
+                <div class="cert-body">
+                    <div class="when">2024</div>
+                    <h4>The Mind Flayer Hackathon</h4>
+                    <div class="org">IIMT College Of Engineering</div>
+                    <p>Certificate of Participation.</p>
+                </div>
+            </div>
+
+            <div class="cert-card panel reveal">
+                <span class="sheen"></span><span class="cbl"></span><span class="cbr"></span>
+                <div class="cert-icon"><i></i></div>
+                <div class="cert-body">
+                    <div class="when">Sept 2024</div>
+                    <h4>Internal Smart India Hackathon</h4>
+                    <div class="org">KCC ITM</div>
+                    <p>Participated as a dedicated team member, demonstrating creativity and problem-solving
+                        skills.</p>
+                </div>
+            </div>
+
+            <div class="cert-card panel reveal">
+                <span class="sheen"></span><span class="cbl"></span><span class="cbr"></span>
+                <div class="cert-icon"><i></i></div>
+                <div class="cert-body">
+                    <div class="when">2024</div>
+                    <h4>Generative AI Mastermind</h4>
+                    <div class="org">Outskill</div>
+                    <p>Certificate of Completion presented by Vaibhav Sisinty.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="education">
+        <div class="section-head reveal">
+            <div class="radar">
+                <svg viewBox="0 0 64 64">
+                    <circle cx="32" cy="32" r="30" fill="none" stroke="var(--line)" stroke-width="1" />
+                    <circle cx="32" cy="32" r="20" fill="none" stroke="var(--line)" stroke-width="1" />
+                    <circle cx="32" cy="32" r="10" fill="none" stroke="var(--line)" stroke-width="1" />
+                    <g class="sweep">
+                        <path d="M32 32 L32 2 A30 30 0 0 1 58 18 Z" fill="var(--amber)" opacity="0.18" />
+                        <line x1="32" y1="32" x2="32" y2="2" stroke="var(--amber)" stroke-width="1.4" />
+                    </g>
+                    <circle cx="32" cy="32" r="2" fill="var(--amber)" />
+                </svg>
+            </div>
+            <div class="txt">
+                <div class="eyebrow">06 // Training Log</div>
+                <h2>Education</h2>
+                <p>Academic path so far.</p>
+            </div>
+        </div>
+
+        <div class="timeline reveal" style="border:none; background:none;">
+            <div class="t-item">
+                <div class="when">Sep 2023 &ndash; Aug 2027</div>
+                <h3>B.Tech in Computer Science and Engineering (Data Science)</h3>
+                <div class="org">Dr. A.P.J. Abdul Kalam Technical University</div>
+            </div>
+            <div class="t-item">
+                <div class="when">Apr 2019 &ndash; Jul 2021</div>
+                <h3>Intermediate (Class XII)</h3>
+                <div class="org">SMT Gulab Kali B.I.C. Bagai Khurd, Prayagraj</div>
+                <span class="grade">GRADE 7.0</span>
+            </div>
+            <div class="t-item">
+                <div class="when">Apr 2008 &ndash; Mar 2019</div>
+                <h3>High School (Class X)</h3>
+                <div class="org">R M Singh U M Vidyalay Kondru Umari, Prayagraj</div>
+                <span class="grade">GRADE 8.1</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="comms">
+        <div class="section-head reveal">
+            <div class="radar">
+                <svg viewBox="0 0 64 64">
+                    <circle cx="32" cy="32" r="30" fill="none" stroke="var(--line)" stroke-width="1" />
+                    <circle cx="32" cy="32" r="20" fill="none" stroke="var(--line)" stroke-width="1" />
+                    <circle cx="32" cy="32" r="10" fill="none" stroke="var(--line)" stroke-width="1" />
+                    <g class="sweep">
+                        <path d="M32 32 L32 2 A30 30 0 0 1 58 18 Z" fill="var(--cyan)" opacity="0.18" />
+                        <line x1="32" y1="32" x2="32" y2="2" stroke="var(--cyan)" stroke-width="1.4" />
+                    </g>
+                    <circle cx="32" cy="32" r="2" fill="var(--cyan)" />
+                </svg>
+            </div>
+            <div class="txt">
+                <div class="eyebrow">07 // Comms Array</div>
+                <h2>Let's Connect</h2>
+                <p>I'm currently open to new opportunities. Send a transmission on any of these frequencies.</p>
+            </div>
+        </div>
+
+        <div class="comms-grid">
+            <a class="comm-card panel reveal" href="mailto:khushiyad152@gmail.com">
+                <span class="sheen"></span><span class="cbl"></span><span class="cbr"></span>
+                <span class="freq">FREQ 001 · EMAIL</span>
+                <span class="chan">Direct Mail</span>
+                <span class="handle">khushiyad152@gmail.com</span>
+            </a>
+
+            <a class="comm-card panel reveal" href="https://www.linkedin.com/in/khushi-yadav8757/"
+                target="_blank" rel="noreferrer">
+                <span class="sheen"></span><span class="cbl"></span><span class="cbr"></span>
+                <span class="freq">FREQ 002 · LINKEDIN</span>
+                <span class="chan">Professional Net</span>
+                <span class="handle">/in/khushi-yadav</span>
+            </a>
+
+            <a class="comm-card panel reveal" href="https://github.com/Khushi-yadav8757" target="_blank" rel="noreferrer">
+                <span class="sheen"></span><span class="cbl"></span><span class="cbr"></span>
+                <span class="freq">FREQ 003 · GITHUB</span>
+                <span class="chan">Source Repository</span>
+                <span class="handle">github.com/Khushi-yadav8757</span>
+            </a>
+
+            <a class="comm-card panel reveal" href="https://www.codechef.com/users/khushi_kyad51" target="_blank"
+                rel="noreferrer">
+                <span class="sheen"></span><span class="cbl"></span><span class="cbr"></span>
+                <span class="freq">FREQ 004 · LEETCODE</span>
+                <span class="chan">Combat Simulator</span>
+                <span class="handle">users/khushi_kyad51</span>
+            </a>
+
+            <a class="comm-card panel reveal" href="https://www.hackerrank.com/profile/khushishresth5" target="_blank"
+                rel="noreferrer">
+                <span class="sheen"></span><span class="cbl"></span><span class="cbr"></span>
+                <span class="freq">FREQ 005 · CODEFORCES</span>
+                <span class="chan">Ranked Arena</span>
+                <span class="handle">profile/khushishresth5</span>
+            </a>
+
+            <a class="comm-card panel reveal" href="https://www.kaggle.com/khushikyad001" target="_blank"
+                rel="noreferrer">
+                <span class="sheen"></span><span class="cbl"></span><span class="cbr"></span>
+                <span class="freq">FREQ 006 · HACKERRANK</span>
+                <span class="chan">Skill Certification</span>
+                <span class="handle">khushikyad001</span>
+            </a>
+
+            <a class="comm-card panel reveal"
+                href="https://drive.google.com/file/d/1wveXuPyXmstMrVPMhoMOruNls6RAoio2/view?usp=sharing"
+                target="_blank" rel="noreferrer">
+                <span class="sheen"></span><span class="cbl"></span><span class="cbr"></span>
+                <span class="freq">FREQ 007 · RESUME</span>
+                <span class="chan">Full Dossier</span>
+                <span class="handle">Download PDF</span>
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="line"></div>
+        <p>SYSTEM: KHUSHI_K_YADAV_OS &nbsp;·&nbsp; STATUS: <b>OPERATIONAL</b> &nbsp;·&nbsp; BUILD 2026.07</p>
+    </footer>
+
+        <script src="script.js"></script>
+
+</body>
+
+</html>
