@@ -1131,6 +1131,21 @@
             line-height: 1.55;
         }
 
+        .cert-link {
+            display: inline-block;
+            margin-top: 10px;
+            font-family: var(--font-mono);
+            font-size: 11.5px;
+            color: var(--cyan);
+            text-decoration: none;
+            letter-spacing: 0.05em;
+            border-bottom: 1px solid transparent;
+        }
+
+        .cert-link:hover {
+            border-color: var(--cyan);
+        }
+
         .comms-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));

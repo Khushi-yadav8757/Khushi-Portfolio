@@ -33,7 +33,7 @@ const Hero = () => {
             className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter mb-6 leading-[1.1] text-white"
           >
             Hi, I'm Khushi <br />
-            <span className="text-chrome animated-gradient-text">B.Tech CSE</span>
+            <span className="text-chrome animated-gradient-text">B.Tech CSE </span>
           </motion.h1>
 
           <motion.p 
